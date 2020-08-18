@@ -7,10 +7,15 @@
 </head>
 
 <body>
-
+  <body>  
+    <form method="post">
+      <input type="button" value="Send Email" onclick="sendEmail()"/>
+    </form>  
+  </body>
 </body>
 
 <script>
+  function sendEmail() {
   Email.send({
     SecureToken : "6a91361f-2c69-401c-a39d-6f25dc114bbc",
     To : 'cyluzia@gmail.com',
@@ -18,8 +23,9 @@
     Subject : "This is the subject",
     Body : "And this is the body"
 }).then(
-  message => alert(message)
+  message => alert("email sent")
 );
+}
 </script>
 
 </html>
