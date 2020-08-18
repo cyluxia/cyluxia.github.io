@@ -5,7 +5,7 @@
 </head>
 
 <body onload="load()">
-            <p class="text" id="loc"></p>
+            <p id="loc"></p>
     </body>
 </html>
 
@@ -26,14 +26,11 @@
      color: green;
      font-family: Monospace;
      top: 49%;
-    }
-    
-  
-.text * {
-  -webkit-animation: glitch 6s infinite steps(50);
+        -webkit-animation: glitch 6s infinite steps(50);
           animation: glitch 6s infinite steps(50);
   display: inline-block;
-}
+    }
+ 
 @-webkit-keyframes glitch {
   2% {
     font-weight: 500;
