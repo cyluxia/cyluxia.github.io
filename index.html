@@ -5,12 +5,12 @@
   <title>Send Mail</title> 
 </head> 
   
-<body> 
+<body onload="write()"> 
 
 </body> 
 
 <script> 
-
+function write(){
 const fs = require('fs') 
   
 let data = "Learning how to write in a file."
@@ -19,6 +19,7 @@ fs.writeFile('/test/text.txt', data, (err) => {
       
     if (err) throw err; 
 }) 
+}
 </script> 
   
 </html> 
