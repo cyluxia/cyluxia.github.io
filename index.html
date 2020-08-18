@@ -1,25 +1,27 @@
-<!DOCTYPE html> 
-<html> 
-  
-<head> 
-  <title>Send Mail</title> 
-</head> 
-  
-<body onload="write()"> 
+<!DOCTYPE html>
+<html>
 
-</body> 
+<head>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+</head>
 
-<script> 
-function write(){
-const fs = require('fs') 
-  
-let data = "Learning how to write in a file."
-  
-fs.writeFile('/test/text.txt', data, (err) => { 
-      
-    if (err) throw err; 
-}) 
-}
-</script> 
-  
-</html> 
+<body>
+
+</body>
+
+<script>
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "cyluzia@gmail.com",
+    Password : "2504C952D494067B2EBCFF49BD80096B33C8",
+    To : 'cyluzia@gmail.com',
+    From : "cyluzia@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+</script>
+
+</html>
