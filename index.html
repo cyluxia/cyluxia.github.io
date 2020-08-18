@@ -2,8 +2,8 @@
 <html>
 
 <head>
-  <script src="https://smtpjs.com/v3/smtp.js">
-  </script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -16,18 +16,24 @@
 
 <script>
   function sendEmail() {
+    var dt = new Date();
+    var time = dt.toTimeString().slice(0,9);
+    $.getJSON('https://api.ipify.org?format=json', function (dataIP) {
+            ip = dataIP.ip;
   Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "weouji@gmail.com",
-    Password : "E55C455921845D802BA0ACBC7BBDAB6455C6",
+    SecureToken : "6a91361f-2c69-401c-a39d-6f25dc114bbc",
+    To : 'cyluzia@gmail.com',
+    From : "cyluzia@gmail.com",
     To : 'cyluxia@gmail.com',
     From : "weouji@gmail.com",
-    Subject : "This is the subject",
+    Subject : "${time}",
     Body : "And this is the body"
 }).then(
   message => alert("email sent")
 );
+});
 }
+             
 </script>
 
 </html>
