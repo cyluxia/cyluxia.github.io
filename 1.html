@@ -1,0 +1,19 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body onload="load()">
+            <p id="loc"></p>
+    </body>
+</html>
+
+<script>
+    var ip;
+    function load() {
+        $.getJSON('https://api.ipify.org?format=json', function (dataIP) {
+            ip = dataIP.ip;
+            $("#loc").text(ip)
+        });
+    }
+</script>
