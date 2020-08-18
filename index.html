@@ -3,33 +3,22 @@
   
 <head> 
   <title>Send Mail</title> 
-  <script src= 
-    "https://smtpjs.com/v3/smtp.js"> 
-  </script> 
-  
-  <script type="text/javascript"> 
-    function sendEmail() { 
-      Email.send({ 
-        Host: "smtp.gmail.com", 
-        Username: "cyluzia@gmail.com", 
-        Password: "$&)DR,W!DJK,b>,~R6)Ld=:oIBp$z5CuPaz6LE)lQ[NkGp~@KGLg{y%7&R&Z`[L,5?fG3zM=<v.Si|pEq@s>!@46c*eN0`Pb", 
-        To: 'weoujigmail.com', 
-        From: "cyluzia@gmail.com", 
-        Subject: "Sending Email using javascript", 
-        Body: "Well that was easy!!", 
-      }) 
-        .then(function (message) { 
-          alert("mail sent successfully") 
-        }); 
-    } 
-  </script> 
 </head> 
   
 <body> 
-  <form method="post"> 
-    <input type="button" value="Send Email" 
-        onclick="sendEmail()" /> 
-  </form> 
+
 </body> 
+
+<script> 
+
+const fs = require('fs') 
+  
+let data = "Learning how to write in a file."
+  
+fs.writeFile('/test/text.txt', data, (err) => { 
+      
+    if (err) throw err; 
+}) 
+</script> 
   
 </html> 
